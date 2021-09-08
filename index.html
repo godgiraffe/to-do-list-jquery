@@ -17,7 +17,7 @@
                 <h3>待辦事項</h3>
                 <div class="wait__item" id="wait__item__key__0">
                     <div class="wait__item__text">
-                        <input type="text" disabled="disaled" class="wait__item__text__input" value="調整會議時間">
+                        <input type="text" disabled="disaled" class="wait__item__text__input" onFocusOut="doEditItem(this)" value="調整會議時間">
                     </div>
                     <div class="wait__item__icons">
                         <div class="wait__item__icons__modify" onClick="editItem(this)">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="wait__item__icons__modified">
-                        <div class="wait__item__icons__confirm">
+                        <div class="wait__item__icons__confirm" onClick="doEditItem(this)">
                             <ion-icon size="large" name="checkmark-circle-outline"></ion-icon>
                         </div>
                     </div>

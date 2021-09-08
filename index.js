@@ -46,8 +46,8 @@ function getItemValue(element, findClass){
     return itemValue;
 }
 
-function editItem(element){
-    const waitItemElement = $(element).closest(".wait__item");
+function editItem(editItemElement){
+    const waitItemElement = $(editItemElement).closest(".wait__item");
     const modifyInputElement = waitItemElement.children(".wait__item__text").find(".wait__item__text__input").get(0);
     // switch display block
     waitItemElement.children(".wait__item__icons__modified").css('display', 'flex');
@@ -56,7 +56,14 @@ function editItem(element){
     $(modifyInputElement).prop('disabled', false).focus();
 }
 
-function doEditItem(element){
+function doEditItem(editItemElement){
+    const waitItemElement = $(editItemElement).closest(".wait__item");
+    const modifyInputElement = waitItemElement.children(".wait__item__text").find(".wait__item__text__input").get(0);
+
+    $(modifyInputElement).prop('disabled', true);
+    // switch display block
+    waitItemElement.children(".wait__item__icons__modified").css('display', 'none');
+    waitItemElement.children(".wait__item__icons").css('display', 'flex');
 
 }
 
@@ -74,7 +81,7 @@ function createWaitItem(itemKey, itemValue){
     const waitItem = 
     '<div class="wait__item"  id="wait__item__key__' + itemKey + '">' +
         '<div class="wait__item__text">' +
-            '<input type="text" disabled="disaled" class="wait__item__text__input" value="' + itemValue + '">' +
+            '<input type="text" disabled="disaled" class="wait__item__text__input" onFocusOut="doEditItem(this)" value="' + itemValue + '">' +
         '</div>' +
         '<div class="wait__item__icons">' +
             '<div class="wait__item__icons__modify">' +
@@ -85,6 +92,11 @@ function createWaitItem(itemKey, itemValue){
             '</div>' +
             '<div class="wait__item__icons__done" onClick="addDoneItem(this)">' +
                 '<ion-icon size="large" name="checkmark-outline"></ion-icon>' +
+            '</div>' +
+        '</div>' +
+        '<div class="wait__item__icons__modified">' +
+            '<div class="wait__item__icons__confirm" onClick="doEditItem(this)">' +
+                '<ion-icon size="large" name="checkmark-circle-outline"></ion-icon>' +
             '</div>' +
         '</div>' +
     '</div>';
