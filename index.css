@@ -60,6 +60,10 @@ h3{
     font-size: 18px;
 }
 
+.done__item__text {
+    text-decoration:line-through;
+}
+
 .wait__item__text__input {
     width: 100%;
     border: none;

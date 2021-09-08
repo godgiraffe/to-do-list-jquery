@@ -64,6 +64,12 @@ function delItem(element, findClass){
     $(element).closest(findClass).get(0).remove()
 }
 
+function doneItem(element, findClass){
+    const doneItemElement = $(element).closest(findClass)
+    const doneItemElementText = doneItemElement.children(".done__item__text")
+    doneItemElementText.css('text-decoration', 'line-through')
+}
+
 function createWaitItem(itemKey, itemValue){
     const waitItem = 
     '<div class="wait__item"  id="wait__item__key__' + itemKey + '">' +
@@ -92,9 +98,6 @@ function createDoneItem(itemKey, itemValue){
         '<div class="done__item__icons">' +
             '<div class="done__item__icons__trash"  onClick="delItem(this, \'.done__item\')">' +
                 '<ion-icon size="large" name="trash-outline"></ion-icon>' +
-            '</div>' +
-            '<div class="done__item__icons__done">' +
-                '<ion-icon size="large" name="checkmark-circle-outline"></ion-icon>' +
             '</div>' +
         '</div>' +
     '</div>';
