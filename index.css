@@ -1,0 +1,86 @@
+.container{
+    width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #89d2ba;
+    border: 3px solid #edd29f;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #1f6866;
+    font-family: monospace;
+    font-size: 40px;
+    text-align: center;
+    padding: 5px;
+}
+
+h3{
+    padding: 5px;
+    font-size: 20px;
+}
+
+.add{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin-bottom: 16px;
+}
+
+.add__input{
+    width: 640px;
+    border: none;
+    border-bottom: 3px solid #edd29f;
+    background-color: #89d2ba;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+.wait, .done {
+    border: 3px solid #edd29f;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 16px;
+}
+
+.add_item, .wait__item, .done__item{
+    padding: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.wait__item__text, .done__item__text {
+    width: 80%;
+    word-break: break-all;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.wait__item__text__input {
+    width: 100%;
+    border: none;
+    background-color: inherit;
+    font-size: 18px;
+    padding: 2px;
+}
+
+.wait__item__icons, .done__item__icons{
+    display: flex;
+}
+
+.wait__item__icons__modified{
+    display: none;
+}
+
+.wait__item__icons__modify, .wait__item__icons__trash, .wait__item__icons__done, .wait__item__icons__confirm, .done__item__icons__trash, .done__item__icons__done{
+    margin: 0 5px;
+}
+
+
+ion-icon:hover{
+    opacity: 0.6;
+}
